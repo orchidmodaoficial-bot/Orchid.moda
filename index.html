@@ -1,140 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-    <title>Orchid Moda - Tienda Online</title>
-      <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orchid Moda</title>
 
-        <style>
-            body{
-                  font-family: Arial, sans-serif;
-                        margin:0;
-                              background:#9EF5E1;
-                                    color:#003b3b;
-                                        }
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e6fff6; /* Menta pastel */
+        }
 
-                                            header{
-                                                  background:#56e0d1;
-                                                        padding:20px;
-                                                              text-align:center;
-                                                                  }
+        /* HEADER */
+        header {
+            background-color: #00d6b9; /* Menta fuerte */
+            padding: 15px;
+            text-align: center;
+        }
 
-                                                                      header h1{
-                                                                            margin:10px 0;
-                                                                                }
+        header img {
+            width: 130px;
+        }
 
-                                                                                    .wrap{
-                                                                                          max-width:800px;
-                                                                                                margin:20px auto;
-                                                                                                      background:#ffffff;
-                                                                                                            padding:20px;
-                                                                                                                  border-radius:15px;
-                                                                                                                      }
+        /* BARRA DE CATEGORÍAS */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 12px;
+            background: white;
+            border-bottom: 2px solid #00c7ac;
+        }
 
-                                                                                                                          input, textarea, button{
-                                                                                                                                width:100%;
-                                                                                                                                      margin:8px 0;
-                                                                                                                                            padding:10px;
-                                                                                                                                                  border-radius:10px;
-                                                                                                                                                        border:1px solid #ddd;
-                                                                                                                                                            }
+        nav a {
+            text-decoration: none;
+            color: #007bbf; /* Azul flor */
+            font-weight: bold;
+            font-size: 16px;
+        }
 
-                                                                                                                                                                button{
-                                                                                                                                                                      background:#56e0d1;
-                                                                                                                                                                            font-weight:bold;
-                                                                                                                                                                                  cursor:pointer;
-                                                                                                                                                                                      }
+        /* PRODUCTOS */
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
 
-                                                                                                                                                                                          .producto{
-                                                                                                                                                                                                border:2px solid #9EF5E1;
-                                                                                                                                                                                                      padding:15px;
-                                                                                                                                                                                                            border-radius:15px;
-                                                                                                                                                                                                                  margin-top:15px;
-                                                                                                                                                                                                                      }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-                                                                                                                                                                                                                          .producto img{
-                                                                                                                                                                                                                                width:100%;
-                                                                                                                                                                                                                                      border-radius:12px;
-                                                                                                                                                                                                                                          }
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
 
-                                                                                                                                                                                                                                              .redes{
-                                                                                                                                                                                                                                                    margin-top:10px;
-                                                                                                                                                                                                                                                        }
+        .card h3 {
+            margin: 5px 0 0 0;
+            font-size: 16px;
+            color: #004f75;
+        }
 
-                                                                                                                                                                                                                                                            .redes a{
-                                                                                                                                                                                                                                                                  margin: 0 8px;
-                                                                                                                                                                                                                                                                        text-decoration:none;
-                                                                                                                                                                                                                                                                              font-weight:bold;
-                                                                                                                                                                                                                                                                                    color:#003b3b;
-                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                          </style>
-                                                                                                                                                                                                                                                                                          </head>
+        .card p {
+            margin: 3px 0;
+            font-size: 14px;
+            color: #008ccc;
+        }
 
-                                                                                                                                                                                                                                                                                          <body>
+        .precio {
+            color: #00a395;
+            font-weight: bold;
+            font-size: 17px;
+        }
 
-                                                                                                                                                                                                                                                                                          <header>
-                                                                                                                                                                                                                                                                                            <h1>🌸 Orchid Moda 🌸</h1>
-                                                                                                                                                                                                                                                                                              <div class="redes">
-                                                                                                                                                                                                                                                                                                  <a href="https://www.instagram.com/orchid_moda_?igsh=NTMwdGs2NXI2dGsy" target="_blank">Instagram</a>
-                                                                                                                                                                                                                                                                                                      <a href="https://www.tiktok.com/@orchid_moda_?_r=1&_t=ZM-9270pSRjeWZ" target="_blank">TikTok</a>
-                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                        </header>
+        /* FOOTER */
+        footer {
+            margin-top: 40px;
+            background: #00d6b9;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
 
-                                                                                                                                                                                                                                                                                                        <div class="wrap">
-                                                                                                                                                                                                                                                                                                          <h2>Panel de la dueña</h2>
-                                                                                                                                                                                                                                                                                                            <input id="nombre" placeholder="Nombre del producto">
-                                                                                                                                                                                                                                                                                                              <input id="precio" type="number" placeholder="Precio (ARS)">
-                                                                                                                                                                                                                                                                                                                <input id="imagen" placeholder="Link de imagen">
-                                                                                                                                                                                                                                                                                                                  <textarea id="descripcion" placeholder="Descripción del producto"></textarea>
-                                                                                                                                                                                                                                                                                                                    <button onclick="agregarProducto()">Agregar producto</button>
-                                                                                                                                                                                                                                                                                                                    </div>
+<body>
 
-                                                                                                                                                                                                                                                                                                                    <div class="wrap" id="tienda">
-                                                                                                                                                                                                                                                                                                                      <h2>Productos disponibles</h2>
-                                                                                                                                                                                                                                                                                                                      </div>
+    <!-- LOGO -->
+    <header>
+        <img src="logo.png" alt="Orchid Moda">
+    </header>
 
-                                                                                                                                                                                                                                                                                                                      <script>
-                                                                                                                                                                                                                                                                                                                        let productos = [];
+    <!-- CATEGORÍAS -->
+    <nav>
+        <a href="#">Mujer</a>
+        <a href="#">Hombre</a>
+        <a href="#">Niñas</a>
+        <a href="#">Niños</a>
+        <a href="#">Ofertas</a>
+    </nav>
 
-                                                                                                                                                                                                                                                                                                                          function agregarProducto(){
-                                                                                                                                                                                                                                                                                                                              const nombre = document.getElementById("nombre").value;
-                                                                                                                                                                                                                                                                                                                                  const precio = document.getElementById("precio").value;
-                                                                                                                                                                                                                                                                                                                                      const imagen = document.getElementById("imagen").value;
-                                                                                                                                                                                                                                                                                                                                          const descripcion = document.getElementById("descripcion").value;
+    <!-- PRODUCTOS DE EJEMPLO (los podés cambiar) -->
+    <section class="productos">
 
-                                                                                                                                                                                                                                                                                                                                              if(!nombre || !precio){
-                                                                                                                                                                                                                                                                                                                                                    alert("Completá el nombre y el precio");
-                                                                                                                                                                                                                                                                                                                                                          return;
-                                                                                                                                                                                                                                                                                                                                                              }
+        <div class="card">
+            <img src="https://via.placeholder.com/300x400" alt="Producto">
+            <h3>Remera básica</h3>
+            <p>Disponible en varias talles</p>
+            <p class="precio">$6.999</p>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                  productos.push({nombre, precio, imagen, descripcion});
-                                                                                                                                                                                                                                                                                                                                                                      mostrarProductos();
-                                                                                                                                                                                                                                                                                                                                                                        }
+        <div class="card">
+            <img src="https://via.placeholder.com/300x400" alt="Producto">
+            <h3>Jean Mujer</h3>
+            <p>Tiro alto – Súper cómodo</p>
+            <p class="precio">$15.499</p>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                          function mostrarProductos(){
-                                                                                                                                                                                                                                                                                                                                                                              const tienda = document.getElementById("tienda");
-                                                                                                                                                                                                                                                                                                                                                                                  tienda.innerHTML = "<h2>Productos disponibles</h2>";
+        <div class="card">
+            <img src="https://via.placeholder.com/300x400" alt="Producto">
+            <h3>Zapatillas Hombre</h3>
+            <p>Urbanas</p>
+            <p class="precio">$22.999</p>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                      productos.forEach(p=>{
-                                                                                                                                                                                                                                                                                                                                                                                            tienda.innerHTML += `
-                                                                                                                                                                                                                                                                                                                                                                                                    <div class="producto">
-                                                                                                                                                                                                                                                                                                                                                                                                              <img src="${p.imagen}">
-                                                                                                                                                                                                                                                                                                                                                                                                                        <h3>${p.nombre}</h3>
-                                                                                                                                                                                                                                                                                                                                                                                                                                  <p>${p.descripcion}</p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                            <p><b>$${p.precio}</b></p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                      <button onclick="comprarWhats('${p.nombre}', '${p.precio}')">Comprar por WhatsApp</button>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    `;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        });
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                          }
+        <div class="card">
+            <img src="https://via.placeholder.com/300x400" alt="Producto">
+            <h3>Vestido Niña</h3>
+            <p>Colores pastel</p>
+            <p class="precio">$9.999</p>
+        </div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            function comprarWhats(nombre, precio){
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                const texto = `Hola! Quiero comprar el producto: ${nombre} por $${precio}`;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    const numero = "543415324220"; 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            window.open(url, "_blank");
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </script>
+    </section>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </html>
+    <footer>
+        Orchid Moda © 2025 — Todos los derechos reservados
+    </footer>
+
+</body>
+</html>
